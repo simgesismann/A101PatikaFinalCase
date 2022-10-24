@@ -1,6 +1,7 @@
 package PageObjectModel;
 
 import Utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,55 +13,48 @@ import java.time.Duration;
 public class BasePage {
     private WebDriver driver = Driver.getDriver();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-
-    public void click(WebElement element){
-        wait.until(ExpectedConditions.visibilityOf(element));
-        element.click();
+    public BasePage(WebDriver driver){
+        this.driver = driver;
     }
-    public void sendKeys(WebElement element, String text){
-        wait.until(ExpectedConditions.visibilityOf(element));
-        element.sendKeys(text);
+    public WebElement find(By locator){
+        WebDriverWait w = new WebDriverWait(driver,50);
+        w.until(ExpectedConditions.presenceOfElementLocated(locator));
+        return driver.findElement(locator);
     }
-    public Boolean isDisplayed(WebElement element){
-        wait.until(ExpectedConditions.visibilityOf(element));
-        if(element.isDisplayed()){
-            return true;
-        }else {
-            return false;
+    public void click(By locator){
+        find(locator).click();
+    }
+    public void type(By locator,String text){
+        find(locator).sendKeys(text);
+    }
+    public boolean isDisplayed(By locator){
+        return (find(locator).isDisplayed());
+    }
+    public void rollUntilFindElementAndClick(By locator){
+        Boolean elemFound = false;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        while (!elemFound){
+            js.executeScript("window.scrollBy(0,350)", "");
+            if (isDisplayed(locator)){
+                elemFound = true;
+                click(locator);
+            }
+        }
+    }
+    public void rollUntilFindElement(By locator){
+        Boolean elemFound = false;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        while (!elemFound){
+            js.executeScript("window.scrollBy(0,350)", "");
+            if (isDisplayed(locator)){
+                elemFound = true;
+            }
         }
     }
     public void wait(int sec) throws InterruptedException{
         Thread.sleep((sec*1000));
     }
-    public void rollUntilFindElementAndClick(WebElement element){
-        Boolean elemFound = false;
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        while (!elemFound){
-            js.executeScript("window.scrollBy(0,350)", "");
-            if (isClickable(element)){
-                elemFound = true;
-                click(element);
-            }
-        }
-    }
-    public void rollUntilFindElement(WebElement element){
-        Boolean elemFound = false;
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        while (!elemFound){
-            js.executeScript("window.scrollBy(0,350)", "");
-            if (isClickable(element)){
-                elemFound = true;
-            }
-        }
-    }
-    public Boolean isClickable(WebElement element){
-        wait.until(ExpectedConditions.visibilityOf(element));
-        if(isDisplayed(element)){
-            wait.until(ExpectedConditions.elementToBeClickable(element));
-            return true;
-        }else {
-            return false;
-        }
-    }
+
+
 
 }
