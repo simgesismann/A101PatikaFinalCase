@@ -1,5 +1,7 @@
 package StepDefinition;
 
+import Pages.HomePage;
+import Pages.SearchBarPage;
 import Utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 
 public class addProductsFromDifferentStoresWithoutLoginSteps {
     WebDriver driver;
+    HomePage homePage;
+    SearchBarPage searchBarPage;
     @Given("navigate to website")
     public void navigate_to_website() {
         driver = Driver.getDriver();
@@ -16,6 +20,8 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
     }
     @And("type product name")
     public void type_product_name() {
+        homePage = new HomePage(driver);
+        homePage.searchBarPage().typeProductNameInSearchBarText();
         System.out.println("typed");
     }
     @And("search product")

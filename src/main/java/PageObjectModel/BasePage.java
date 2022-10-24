@@ -11,13 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BasePage {
-    private WebDriver driver = Driver.getDriver();
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+    public WebDriver driver;
     public BasePage(WebDriver driver){
         this.driver = driver;
     }
     public WebElement find(By locator){
-        WebDriverWait w = new WebDriverWait(driver,50);
+        WebDriverWait w = new WebDriverWait(driver,Duration.ofSeconds(60));
         w.until(ExpectedConditions.presenceOfElementLocated(locator));
         return driver.findElement(locator);
     }
