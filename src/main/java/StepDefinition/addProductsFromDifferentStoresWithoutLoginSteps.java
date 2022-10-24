@@ -1,13 +1,18 @@
 package StepDefinition;
 
+import Utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.WebDriver;
 
 public class addProductsFromDifferentStoresWithoutLoginSteps {
+    WebDriver driver;
     @Given("navigate to website")
     public void navigate_to_website() {
-        System.out.println("navigated");
+        driver = Driver.getDriver();
+        driver.get("https://www.hepsiburada.com/");
+        driver.manage().window().maximize();
     }
     @And("type product name")
     public void type_product_name() {
