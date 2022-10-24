@@ -15,5 +15,8 @@ public class HomePage extends HomePageConstants {
     public SearchBarPage searchBarPage(){
         return this.searchBarPage;
     }
+    public void clickToMyCart(){
+        click(MyCartButtonLocator);
+    }
 
 }

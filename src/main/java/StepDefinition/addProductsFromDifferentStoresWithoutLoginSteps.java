@@ -45,15 +45,22 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         System.out.println("choosed");
     }
     @And("add product to cart")
-    public void add_product_to_cart() {
+    public void add_product_to_cart() throws InterruptedException {
         productDetailPage = new ProductDetailPage(driver);
-        List<String> pages = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(pages.get(1));
+        productDetailPage.windowHandle();
+        productDetailPage.assertProductDetailPageIsDirected();
         productDetailPage.rollAndClickAddToCartButton();
+        productDetailPage.assertAddCartButtonIsClicked();
+        productDetailPage.clickCloseButton();
         System.out.println("product added");
     }
     @And("add same product from another store to cart")
-    public void add_same_product_from_another_store_to_cart() {
+    public void add_same_product_from_another_store_to_cart() throws InterruptedException {
+        productDetailPage = new ProductDetailPage(driver);
+        productDetailPage.assertOtherBuyOptionsTitleIsDisplayed();
+        productDetailPage.getTextTitleOfOtherOptionsList();
+        productDetailPage.clickOtherOptionAddToCartButton();
+        productDetailPage.clickCloseButton();
         System.out.println("add another");
     }
     @And("navigate to cart page")

@@ -13,6 +13,7 @@ import java.util.List;
 
 public class BasePage {
     public WebDriver driver;
+    public String otherFirmTitle;
     public BasePage(WebDriver driver){
         this.driver = driver;
     }
@@ -30,8 +31,14 @@ public class BasePage {
     public void type(By locator,String text){
         find(locator).sendKeys(text);
     }
+    public String getText(By locator){
+        return find(locator).getText();
+    }
     public boolean isDisplayed(By locator){
         return (find(locator).isDisplayed());
+    }
+    public void scrollToTopOfPage(){
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(document.body.scrollHeight, 0)");
     }
     public void rollUntilFindElementAndClick(By locator){
         Boolean elemFound = false;

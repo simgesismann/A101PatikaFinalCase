@@ -10,4 +10,5 @@ public class HomePageConstants extends BasePage {
         super(driver);
     }
     public By AcceptCookiesLocator = By.id("onetrust-accept-btn-handler");
+    public By MyCartButtonLocator = By.id("shoppingCart");
 }
