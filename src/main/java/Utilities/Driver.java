@@ -13,6 +13,9 @@ public class Driver {
             driver=new ChromeDriver();
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--incognito");
+            chromeOptions.addArguments("--disable-blink-features");
+            chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
+            chromeOptions.addArguments("--disable-extensions");
             chromeOptions.addArguments("--disable-site-isolation-trials");
         }
         return driver;
