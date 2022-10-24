@@ -1,4 +1,4 @@
-package Pages;
+package PageObjectModel.Pages;
 
 import Utilities.PageConstants.SearchBarConstants;
 import org.openqa.selenium.WebDriver;

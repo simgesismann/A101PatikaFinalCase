@@ -1,7 +1,7 @@
 package StepDefinition;
 
-import Pages.HomePage;
-import Pages.SearchBarPage;
+import PageObjectModel.Pages.HomePage;
+import PageObjectModel.Pages.ProductsPage;
 import Utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -11,7 +11,8 @@ import org.openqa.selenium.WebDriver;
 public class addProductsFromDifferentStoresWithoutLoginSteps {
     WebDriver driver;
     HomePage homePage;
-    SearchBarPage searchBarPage;
+    ProductsPage productsPage;
+
     @Given("navigate to website")
     public void navigate_to_website() {
         driver = Driver.getDriver();
@@ -21,6 +22,7 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
     @And("type product name")
     public void type_product_name() {
         homePage = new HomePage(driver);
+        homePage.acceptCookies();
         homePage.searchBarPage().typeProductNameInSearchBarText();
         System.out.println("typed");
     }
@@ -31,7 +33,10 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         System.out.println("searched");
     }
     @And("choose a product")
-    public void choose_a_product() {
+    public void choose_a_product() throws InterruptedException {
+        productsPage = new ProductsPage(driver);
+        productsPage.assertProductPageIsDirected();
+        productsPage.chooseOneProduct();
         System.out.println("choosed");
     }
     @And("add product to cart")

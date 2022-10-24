@@ -5,18 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Driver {
     public static WebDriver driver;
     public static WebDriver getDriver(){
         if(driver==null){
             WebDriverManager.chromedriver().setup();
-            driver=new ChromeDriver();
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--incognito");
+            chromeOptions.addArguments("--disable-site-isolation-trials");
+            chromeOptions.addArguments("--disable-notifications");
             chromeOptions.addArguments("--disable-blink-features");
             chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
             chromeOptions.addArguments("--disable-extensions");
-            chromeOptions.addArguments("--disable-site-isolation-trials");
+            driver=new ChromeDriver(chromeOptions);
+            //driver = WebDriverManager.chromedriver().capabilities(chromeOptions).create();
         }
         return driver;
     }

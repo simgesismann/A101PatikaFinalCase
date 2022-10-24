@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BasePage {
     public WebDriver driver;
@@ -19,6 +20,9 @@ public class BasePage {
         WebDriverWait w = new WebDriverWait(driver,Duration.ofSeconds(60));
         w.until(ExpectedConditions.presenceOfElementLocated(locator));
         return driver.findElement(locator);
+    }
+    public List<WebElement> findAll(By locator){
+        return driver.findElements(locator);
     }
     public void click(By locator){
         find(locator).click();

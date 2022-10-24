@@ -1,7 +1,7 @@
 Feature: Feature to test adding products
   Background: navigate to form page
     Given navigate to website
-  Scenario: tests fill form basic
+  Scenario: tests to add product from different stores
     And type product name
     And search product
     And choose a product
