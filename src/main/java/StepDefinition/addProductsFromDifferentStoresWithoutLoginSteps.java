@@ -65,6 +65,8 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
     }
     @And("navigate to cart page")
     public void navigate_to_cart_page() {
+        homePage = new HomePage(driver);
+        homePage.clickToMyCart();
         System.out.println("navigated cart page");
     }
     @Then("confirm chosen products are on cart page")
