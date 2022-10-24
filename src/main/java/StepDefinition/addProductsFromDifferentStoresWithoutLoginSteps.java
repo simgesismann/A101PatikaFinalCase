@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import PageObjectModel.Pages.HomePage;
+import PageObjectModel.Pages.ProductDetailPage;
 import PageObjectModel.Pages.ProductsPage;
 import Utilities.Driver;
 import io.cucumber.java.en.And;
@@ -8,10 +9,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class addProductsFromDifferentStoresWithoutLoginSteps {
     WebDriver driver;
     HomePage homePage;
     ProductsPage productsPage;
+    ProductDetailPage productDetailPage;
 
     @Given("navigate to website")
     public void navigate_to_website() {
@@ -41,6 +46,10 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
     }
     @And("add product to cart")
     public void add_product_to_cart() {
+        productDetailPage = new ProductDetailPage(driver);
+        List<String> pages = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(pages.get(1));
+        productDetailPage.rollAndClickAddToCartButton();
         System.out.println("product added");
     }
     @And("add same product from another store to cart")
