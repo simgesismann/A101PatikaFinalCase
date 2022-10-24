@@ -26,6 +26,8 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
     }
     @And("search product")
     public void search_product() {
+        homePage = new HomePage(driver);
+        homePage.searchBarPage().clickSearchButton();
         System.out.println("searched");
     }
     @And("choose a product")

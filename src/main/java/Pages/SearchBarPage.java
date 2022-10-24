@@ -12,4 +12,7 @@ public class SearchBarPage extends SearchBarConstants {
         click(SearchBarTextLocator);
         type(SearchBarTextLocator,"şemsiye");
     }
+    public void clickSearchButton(){
+        click(SearchButtonLocator);
+    }
 }

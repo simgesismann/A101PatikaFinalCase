@@ -9,4 +9,5 @@ public class SearchBarConstants extends BasePage {
         super(driver);
     }
     public final By SearchBarTextLocator = By.className("desktopOldAutosuggestTheme-UyU36RyhCTcuRs_sXL9b");
+    public final By SearchButtonLocator = By.className("SearchBoxOld-cHxjyU99nxdIaAbGyX7F");
 }
