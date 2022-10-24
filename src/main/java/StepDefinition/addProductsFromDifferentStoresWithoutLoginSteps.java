@@ -1,5 +1,5 @@
 package StepDefinition;
-
+import PageObjectModel.Pages.CartPage;
 import PageObjectModel.Pages.HomePage;
 import PageObjectModel.Pages.ProductDetailPage;
 import PageObjectModel.Pages.ProductsPage;
@@ -8,15 +8,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class addProductsFromDifferentStoresWithoutLoginSteps {
     WebDriver driver;
     HomePage homePage;
     ProductsPage productsPage;
     ProductDetailPage productDetailPage;
+    CartPage cartPage;
 
     @Given("navigate to website")
     public void navigate_to_website() {
@@ -71,7 +68,10 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
     }
     @Then("confirm chosen products are on cart page")
     public void confirm_chosen_products_are_on_cart_page() {
+        cartPage = new CartPage(driver);
+        cartPage.assertCartPageIsDirected();
+        cartPage.getTextOfOtherFirmTitleInCartPage();
+        cartPage.assertAddedProductFirmIsCorrectInCart();
         System.out.println("confirmed that products are on page");
     }
-
 }

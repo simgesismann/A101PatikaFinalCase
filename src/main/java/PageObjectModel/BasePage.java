@@ -14,6 +14,7 @@ import java.util.List;
 public class BasePage {
     public WebDriver driver;
     public String otherFirmTitle;
+    public String otherFirmTitleInCartPage;
     public BasePage(WebDriver driver){
         this.driver = driver;
     }
