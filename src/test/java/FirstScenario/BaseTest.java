@@ -37,8 +37,11 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.get("https://www.hepsiburada.com");
     }
-    //@AfterTest
+    @AfterTest
     public void tearDown(){
-        driver.quit();
+        for(String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+            driver.close();
+        }
     }
 }

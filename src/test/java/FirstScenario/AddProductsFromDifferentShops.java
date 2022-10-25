@@ -1,6 +1,4 @@
 package FirstScenario;
-
-import FirstScenario.BaseTest;
 import PageObjectModel.Pages.CartPage;
 import PageObjectModel.Pages.HomePage;
 import PageObjectModel.Pages.ProductDetailPage;
@@ -16,7 +14,7 @@ public class AddProductsFromDifferentShops extends BaseTest {
     public void typeProductName() {
         homePage = new HomePage(driver);
         homePage.acceptCookies();
-        homePage.searchBarPage().typeProductNameInSearchBarText();
+        homePage.searchBarPage().typeProductNameInSearchBarText("şemsiye");
         System.out.println("typed");
     }
     @Test(priority = 2)
@@ -62,7 +60,6 @@ public class AddProductsFromDifferentShops extends BaseTest {
         cartPage = new CartPage(driver);
         cartPage.assertCartPageIsDirected();
         cartPage.getTextOfOtherFirmTitleInCartPage();
-        cartPage.assertAddedProductFirmIsCorrectInCart();
-        System.out.println("confirmed that products are on page");
+        //cartPage.assertAddedProductFirmIsCorrectInCart();
     }
 }

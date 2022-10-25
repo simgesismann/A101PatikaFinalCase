@@ -20,7 +20,6 @@ public class Driver {
             chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
             chromeOptions.addArguments("--disable-extensions");
             driver=new ChromeDriver(chromeOptions);
-            //driver = WebDriverManager.chromedriver().capabilities(chromeOptions).create();
         }
         return driver;
     }
@@ -28,6 +27,12 @@ public class Driver {
         if(driver!=null){
             driver.close();
             driver=null;
+        }
+    }
+    public static void closeAllTabs(){
+        for(String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+            driver.close();
         }
     }
     public static void quitDriver(){

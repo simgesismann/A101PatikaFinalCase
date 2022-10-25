@@ -29,7 +29,15 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
     public void type_product_name() {
         homePage = new HomePage(driver);
         homePage.acceptCookies();
-        homePage.searchBarPage().typeProductNameInSearchBarText();
+        homePage.searchBarPage().typeProductNameInSearchBarText("şemsiye");
+        log = new Log();
+        log.info("Product name is typed in search bar.");
+    }
+    @And("type {string}")
+    public void type(String productName) {
+        homePage = new HomePage(driver);
+        homePage.acceptCookies();
+        homePage.searchBarPage().typeProductNameInSearchBarText(productName);
         log = new Log();
         log.info("Product name is typed in search bar.");
     }
@@ -87,11 +95,13 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
     @Then("confirm chosen products are on cart page")
     public void confirm_chosen_products_are_on_cart_page() {
         cartPage = new CartPage(driver);
+        Driver driver1 = new Driver();
         cartPage.assertCartPageIsDirected();
         log.info("Cart Page is directed.");
         cartPage.getTextOfOtherFirmTitleInCartPage();
         cartPage.getTextOfProductNameInCartPage();
         cartPage.printProductNameInDetailPageAndCartPage();
+        driver1.closeAllTabs();
         //cartPage.assertAddedProductFirmIsCorrectInCart();
     }
 }

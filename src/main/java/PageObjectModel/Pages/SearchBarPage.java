@@ -8,9 +8,9 @@ public class SearchBarPage extends SearchBarConstants {
     public SearchBarPage(WebDriver driver) {
         super(driver);
     }
-    public void typeProductNameInSearchBarText(){
+    public void typeProductNameInSearchBarText(String Text){
         click(SearchBarTextLocator);
-        type(SearchBarTextLocator,"şemsiye");
+        type(SearchBarTextLocator,Text);
     }
     public void clickSearchButton(){
         click(SearchButtonLocator);

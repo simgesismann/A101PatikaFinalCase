@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="96.743">
-    <testcase classname="Feature to test adding products" name="tests to add product from different stores" time="96.454">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="101.956">
+    <testcase classname="Feature to test adding products" name="tests to add product from different stores" time="101.577">
         <system-out><![CDATA[Given navigate to website...................................................passed
-And type product name.......................................................passed
+And type "şemsiye"..........................................................passed
 And search product..........................................................passed
 And choose a product........................................................passed
 And add product to cart.....................................................passed
