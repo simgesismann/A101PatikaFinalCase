@@ -22,19 +22,15 @@ public class ProductDetailPage extends ProductDetailPageConstants {
     public void assertProductDetailPageIsDirected(){
         Assertions.assertTrue(isDisplayed(ProductIdLocator),"Product detail page is not directed correctly");
     }
-    public void getTextOfProductName(){
-        productNameInDetailPage = getText(ProductIdLocator);
-        System.out.println(productNameInDetailPage);
-    }
-    public void printProductName(){
-        System.out.println(productNameInDetailPage);
+    public String getTextOfProductName(){
+        return getText(ProductIdLocator);
     }
     public void rollAndClickAddToCartButton() throws InterruptedException {
         rollUntilFindElementAndClick(AddToCartButtonLocator);
         wait(10);
     }
     public void assertAddCartButtonIsClicked() throws InterruptedException {
-        wait(5);
+        wait(10);
         Assertions.assertTrue(isDisplayed(ProductIsAddedToCartTitleLocator),"Product is not added to cart");
     }
     public void clickCloseButton(){
@@ -44,14 +40,13 @@ public class ProductDetailPage extends ProductDetailPageConstants {
         rollUntilFindElement(OtherBuyOptionsTitleLocator);
         Assertions.assertTrue(isDisplayed(OtherBuyOptionsTitleLocator),"Other Buy Options Title is not displayed");
     }
-    public void getTextTitleOfOtherOptionsList(){
+    public String getTextTitleOfOtherOptionsList(){
         List<WebElement> otherOptionsList = findAll(OtherBuyOptionsListLocator);
         WebElement otherOption = otherOptionsList.get(0);
-        otherFirmTitle = otherOption.getText();
+        return otherOption.getText();
     }
     public void clickOtherOptionAddToCartButton() throws InterruptedException {
         click(AddToCartOtherBuyOptionButtonLocator);
         wait(10);
     }
-
 }

@@ -23,6 +23,7 @@ public class BaseTest {
                 chromeOptions.addArguments("--disable-blink-features");
                 chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
                 chromeOptions.addArguments("--disable-extensions");
+                //chromeOptions.setHeadless(true);
                 driver=new ChromeDriver(chromeOptions);
                 break;
             case("firefox"):

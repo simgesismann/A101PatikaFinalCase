@@ -8,6 +8,7 @@ import Utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 public class addProductsFromDifferentStores {
     WebDriver driver;
@@ -16,6 +17,10 @@ public class addProductsFromDifferentStores {
     ProductDetailPage productDetailPage;
     CartPage cartPage;
     Log log;
+    String productNameInDetailPage ;
+    String productNameInCartPage ;
+    String productFirmNameInCartPage ;
+    String productFirmNameInDetailPage ;
     /**
      * Directed to Home Page
      */
@@ -30,7 +35,7 @@ public class addProductsFromDifferentStores {
     @Given("user log in")
     public void user_log_in() {
         homePage = new HomePage(driver);
-        homePage.moveAndClickCreateUserButton();
+        //homePage.moveAndClickCreateUserButton();
 
     }
     @And("confirm user is logged in")
@@ -88,8 +93,8 @@ public class addProductsFromDifferentStores {
         log.info("Window is handled.");
         productDetailPage.assertProductDetailPageIsDirected();
         log.info("Product Details Page is directed.");
-        productDetailPage.getTextOfProductName();
-        productDetailPage.printProductName();
+        productFirmNameInDetailPage = productDetailPage.getTextTitleOfOtherOptionsList();
+        productNameInDetailPage = productDetailPage.getTextOfProductName();
         productDetailPage.rollAndClickAddToCartButton();
         productDetailPage.assertAddCartButtonIsClicked();
         log.info("Add Cart Button is clicked.");
@@ -133,10 +138,10 @@ public class addProductsFromDifferentStores {
         Driver driver1 = new Driver();
         cartPage.assertCartPageIsDirected();
         log.info("Cart Page is directed.");
-        cartPage.getTextOfOtherFirmTitleInCartPage();
-        cartPage.getTextOfProductNameInCartPage();
-        cartPage.printProductNameInDetailPageAndCartPage();
+        productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().replaceAll("\\p{M}", "");;
+        productNameInCartPage = cartPage.getTextOfProductNameInCartPage();
+        Assertions.assertEquals(productFirmNameInCartPage.toUpperCase(),productFirmNameInDetailPage.toUpperCase());
+        Assertions.assertTrue(productNameInCartPage.contains(productNameInDetailPage));
         driver1.closeAllTabs();
-        //cartPage.assertAddedProductFirmIsCorrectInCart();
     }
 }

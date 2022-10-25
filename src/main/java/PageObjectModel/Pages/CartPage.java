@@ -9,17 +9,10 @@ public class CartPage extends CartPageConstants {
     public void assertCartPageIsDirected(){
         Assertions.assertTrue(isDisplayed(BasketHeaderTitleLocator),"Basket page is not directed");
     }
-    public void getTextOfProductNameInCartPage(){
-        productNameInCartPage = getText(ProductNameInCartPageLocator);
+    public String getTextOfProductNameInCartPage(){
+        return getText(ProductNameInCartPageLocator);
     }
-    public void printProductNameInDetailPageAndCartPage(){
-        System.out.println("in cart page: "+productNameInCartPage );
-        System.out.println("in detail page :"+productNameInDetailPage);
-    }
-    public void getTextOfOtherFirmTitleInCartPage(){
-        otherFirmTitleInCartPage = getText(OtherFirmTitleInCartPageLocator);
-    }
-    public void assertAddedProductFirmIsCorrectInCart(){
-        Assertions.assertEquals(otherFirmTitleInCartPage,otherFirmTitle);
+    public String getTextOfOtherFirmTitleInCartPage(){
+        return getText(OtherFirmTitleInCartPageLocator);
     }
 }

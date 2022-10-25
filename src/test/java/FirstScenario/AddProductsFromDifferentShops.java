@@ -3,6 +3,7 @@ import PageObjectModel.Pages.CartPage;
 import PageObjectModel.Pages.HomePage;
 import PageObjectModel.Pages.ProductDetailPage;
 import PageObjectModel.Pages.ProductsPage;
+import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.Test;
 
 public class AddProductsFromDifferentShops extends BaseTest {
@@ -10,6 +11,8 @@ public class AddProductsFromDifferentShops extends BaseTest {
     ProductsPage productsPage;
     ProductDetailPage productDetailPage;
     CartPage cartPage;
+    String productFirmNameInDetailPage;
+    String productFirmNameInCartPage;
     /**
      * Directed to Home Page
      * @param "Text" is used to type in search bar.
@@ -64,7 +67,8 @@ public class AddProductsFromDifferentShops extends BaseTest {
     public void addSameProductFromAnotherStoreToCart() throws InterruptedException {
         productDetailPage = new ProductDetailPage(driver);
         productDetailPage.assertOtherBuyOptionsTitleIsDisplayed();
-        productDetailPage.getTextTitleOfOtherOptionsList();
+        productFirmNameInDetailPage = productDetailPage.getTextTitleOfOtherOptionsList();
+        productFirmNameInDetailPage = productFirmNameInDetailPage.toUpperCase();
         productDetailPage.clickOtherOptionAddToCartButton();
         productDetailPage.clickCloseButton();
         System.out.println("add another");
@@ -85,7 +89,9 @@ public class AddProductsFromDifferentShops extends BaseTest {
     public void confirmChosenProductsAreOnCartPage() {
         cartPage = new CartPage(driver);
         cartPage.assertCartPageIsDirected();
-        cartPage.getTextOfOtherFirmTitleInCartPage();
-        //cartPage.assertAddedProductFirmIsCorrectInCart();
+        productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage();
+        productFirmNameInCartPage = productFirmNameInCartPage.toUpperCase();
+        productFirmNameInCartPage = productFirmNameInCartPage.replaceAll("\\p{M}", "");
+        Assertions.assertEquals(productFirmNameInCartPage, productFirmNameInDetailPage);
     }
 }

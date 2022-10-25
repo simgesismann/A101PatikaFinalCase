@@ -11,6 +11,7 @@ public class HomePageConstants extends BasePage {
     }
     public By AcceptCookiesLocator = By.id("onetrust-accept-btn-handler");
     public By MyCartButtonLocator = By.id("shoppingCart");
+    /*public By MyAccountButtonLocator = By.className("sf-OldMyAccount-d0xCHLV38UCH5cD9mOXq");
     public By LogInGenelButtonLocator = By.className("sf-OldMyAccount-sS_G2sunmDtZl9Tld5PR user-info");
-    public By CreateUserButtonLocator = By.id("register");
+    public By CreateUserButtonLocator = By.id("register");*/
 }

@@ -13,8 +13,6 @@ import java.util.List;
 
 public class BasePage {
     public WebDriver driver;
-    public String otherFirmTitle;
-    public String otherFirmTitleInCartPage;
     public String productNameInDetailPage;
     public String productNameInCartPage;
     public BasePage(WebDriver driver){

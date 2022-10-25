@@ -1,6 +1,7 @@
 package PageObjectModel.Pages;
 
 import Utilities.PageConstants.HomePageConstants;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage extends HomePageConstants {
@@ -12,10 +13,13 @@ public class HomePage extends HomePageConstants {
     public void acceptCookies(){
         click(AcceptCookiesLocator);
     }
-    public void moveAndClickCreateUserButton(){
+    /*public void moveAndClickCreateUserButton(){
         moveToElement(LogInGenelButtonLocator);
         click(CreateUserButtonLocator);
     }
+    public void myAccountButtonIsDisplayed(){
+        Assertions.assertTrue(isDisplayed(MyAccountButtonLocator));
+    }*/
     public SearchBarPage searchBarPage(){
         return this.searchBarPage;
     }
