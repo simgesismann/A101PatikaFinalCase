@@ -12,10 +12,14 @@ public class HomePage extends HomePageConstants {
     public void acceptCookies(){
         click(AcceptCookiesLocator);
     }
+    public void moveAndClickCreateUserButton(){
+        moveToElement(LogInGenelButtonLocator);
+        click(CreateUserButtonLocator);
+    }
     public SearchBarPage searchBarPage(){
         return this.searchBarPage;
     }
-    public void clickToMyCart(){
+    public void clickToMyCartButton(){
         scrollToTopOfPage();
         click(MyCartButtonLocator);
     }

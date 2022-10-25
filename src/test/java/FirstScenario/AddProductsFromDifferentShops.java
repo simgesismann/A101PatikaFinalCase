@@ -75,7 +75,7 @@ public class AddProductsFromDifferentShops extends BaseTest {
     @Test(priority = 6)
     public void navigateToCartPage() {
         homePage = new HomePage(driver);
-        homePage.clickToMyCart();
+        homePage.clickToMyCartButton();
     }
     /**
      * Confirm that page is directed

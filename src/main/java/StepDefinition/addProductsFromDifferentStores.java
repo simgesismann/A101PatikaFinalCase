@@ -9,7 +9,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
-public class addProductsFromDifferentStoresWithoutLoginSteps {
+public class addProductsFromDifferentStores {
     WebDriver driver;
     HomePage homePage;
     ProductsPage productsPage;
@@ -26,6 +26,16 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         driver.get("https://www.hepsiburada.com/");
         driver.manage().window().maximize();
         log.info("Navigated to website.");
+    }
+    @Given("user log in")
+    public void user_log_in() {
+        homePage = new HomePage(driver);
+        homePage.moveAndClickCreateUserButton();
+
+    }
+    @And("confirm user is logged in")
+    public void confirm_user_is_logged_in() {
+
     }
     /**
      * Directed to Home Page
@@ -110,7 +120,7 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
     public void navigate_to_cart_page() {
         homePage = new HomePage(driver);
         log = new Log();
-        homePage.clickToMyCart();
+        homePage.clickToMyCartButton();
         log.info("My cart button is clicked to see products in it.");
     }
     /**

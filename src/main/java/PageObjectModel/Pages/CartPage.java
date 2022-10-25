@@ -1,11 +1,7 @@
 package PageObjectModel.Pages;
-
-import PageObjectModel.BasePage;
 import Utilities.PageConstants.CartPageConstants;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
-import org.testng.asserts.Assertion;
-
 public class CartPage extends CartPageConstants {
     public CartPage(WebDriver driver) {
         super(driver);
