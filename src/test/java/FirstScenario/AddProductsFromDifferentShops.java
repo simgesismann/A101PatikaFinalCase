@@ -1,10 +1,13 @@
+package FirstScenario;
+
+import FirstScenario.BaseTest;
 import PageObjectModel.Pages.CartPage;
 import PageObjectModel.Pages.HomePage;
 import PageObjectModel.Pages.ProductDetailPage;
 import PageObjectModel.Pages.ProductsPage;
 import org.testng.annotations.Test;
 
-public class AddProductsFromDifferentShops extends BaseTest{
+public class AddProductsFromDifferentShops extends BaseTest {
     HomePage homePage;
     ProductsPage productsPage;
     ProductDetailPage productDetailPage;

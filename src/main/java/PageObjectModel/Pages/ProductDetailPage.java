@@ -22,6 +22,13 @@ public class ProductDetailPage extends ProductDetailPageConstants {
     public void assertProductDetailPageIsDirected(){
         Assertions.assertTrue(isDisplayed(ProductIdLocator),"Product detail page is not directed correctly");
     }
+    public void getTextOfProductName(){
+        productNameInDetailPage = getText(ProductIdLocator);
+        System.out.println(productNameInDetailPage);
+    }
+    public void printProductName(){
+        System.out.println(productNameInDetailPage);
+    }
     public void rollAndClickAddToCartButton() throws InterruptedException {
         rollUntilFindElementAndClick(AddToCartButtonLocator);
         wait(10);

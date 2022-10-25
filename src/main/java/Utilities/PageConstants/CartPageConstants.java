@@ -10,4 +10,5 @@ public class CartPageConstants extends BasePage {
     }
     public By BasketHeaderTitleLocator = By.className("basket_headerTop_15H0U");
     public By OtherFirmTitleInCartPageLocator = By.className("merchantLink_2Ii8s");
+    public By ProductNameInCartPageLocator = By.className("product_name_3Lh3t");
 }

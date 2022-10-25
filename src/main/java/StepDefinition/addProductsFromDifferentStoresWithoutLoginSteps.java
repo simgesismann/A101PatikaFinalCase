@@ -57,6 +57,8 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         log.info("Window is handled.");
         productDetailPage.assertProductDetailPageIsDirected();
         log.info("Product Details Page is directed.");
+        productDetailPage.getTextOfProductName();
+        productDetailPage.printProductName();
         productDetailPage.rollAndClickAddToCartButton();
         productDetailPage.assertAddCartButtonIsClicked();
         log.info("Add Cart Button is clicked.");
@@ -88,6 +90,8 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         cartPage.assertCartPageIsDirected();
         log.info("Cart Page is directed.");
         cartPage.getTextOfOtherFirmTitleInCartPage();
-        cartPage.assertAddedProductFirmIsCorrectInCart();
+        cartPage.getTextOfProductNameInCartPage();
+        cartPage.printProductNameInDetailPageAndCartPage();
+        //cartPage.assertAddedProductFirmIsCorrectInCart();
     }
 }
