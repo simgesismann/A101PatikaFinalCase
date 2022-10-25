@@ -16,7 +16,9 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
     ProductDetailPage productDetailPage;
     CartPage cartPage;
     Log log;
-
+    /**
+     * Directed to Home Page
+     */
     @Given("navigate to website")
     public void navigate_to_website() {
         driver = Driver.getDriver();
@@ -25,14 +27,10 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         driver.manage().window().maximize();
         log.info("Navigated to website.");
     }
-    @And("type product name")
-    public void type_product_name() {
-        homePage = new HomePage(driver);
-        homePage.acceptCookies();
-        homePage.searchBarPage().typeProductNameInSearchBarText("şemsiye");
-        log = new Log();
-        log.info("Product name is typed in search bar.");
-    }
+    /**
+     * Directed to Home Page
+     * @param "Text" is used to type in search bar.
+     */
     @And("type {string}")
     public void type(String productName) {
         homePage = new HomePage(driver);
@@ -41,6 +39,9 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         log = new Log();
         log.info("Product name is typed in search bar.");
     }
+    /**
+     * Search button in searchbar is clicked.
+     */
     @And("search product")
     public void search_product() {
         homePage = new HomePage(driver);
@@ -48,6 +49,10 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         log = new Log();
         log.info("Product is searching.");
     }
+    /**
+     * After search , in product page there are products.
+     * First one of that product list is chosen.
+     */
     @And("choose a product")
     public void choose_a_product() throws InterruptedException {
         productsPage = new ProductsPage(driver);
@@ -57,6 +62,14 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         productsPage.chooseOneProduct();
         log.info("A product from list is chosen.");
     }
+    /**
+     * When product is chosen new tab is opened and navigated to it.
+     * Assert that detail page is directed or not.
+     * @method "rollAndClickAddToCartButton()" is to scroll down until find ADD TO CART BUTTON.
+     * Assert that cart button is clicked.
+     * When ADD TO CART button is clicked, there is pop-up.
+     * @method "clickCloseButton()" is to close Pop-up.
+     */
     @And("add product to cart")
     public void add_product_to_cart() throws InterruptedException {
         productDetailPage = new ProductDetailPage(driver);
@@ -73,6 +86,11 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         productDetailPage.clickCloseButton();
         log.info("Pop-up is closed.");
     }
+    /**
+     * @method "assertOtherBuyOptionsTitleIsDisplayed()" is to confirm that product has other option firms.
+     * Click first ADD TO CART Button in other options
+     * @method "clickCloseButton()" is to close Pop-up.
+     */
     @And("add same product from another store to cart")
     public void add_same_product_from_another_store_to_cart() throws InterruptedException {
         productDetailPage = new ProductDetailPage(driver);
@@ -85,6 +103,9 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         productDetailPage.clickCloseButton();
         log.info("Pop-up is closed.");
     }
+    /**
+     * @method "clickToMyCard" is to navigate cart page.
+     */
     @And("navigate to cart page")
     public void navigate_to_cart_page() {
         homePage = new HomePage(driver);
@@ -92,6 +113,10 @@ public class addProductsFromDifferentStoresWithoutLoginSteps {
         homePage.clickToMyCart();
         log.info("My cart button is clicked to see products in it.");
     }
+    /**
+     * Confirm that page is directed
+     *
+     */
     @Then("confirm chosen products are on cart page")
     public void confirm_chosen_products_are_on_cart_page() {
         cartPage = new CartPage(driver);
