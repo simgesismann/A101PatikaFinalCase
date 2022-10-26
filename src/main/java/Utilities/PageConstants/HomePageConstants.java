@@ -13,6 +13,5 @@ public class HomePageConstants extends BasePage {
     public By MyCartButtonLocator = By.id("shoppingCart");
     public By LogInGenelButtonLocator = By.className("sf-OldMyAccount-d0xCHLV38UCH5cD9mOXq");
     public By LogInButtonLocator = By.id("login");
-    public By SelectLocationButtonLocator = By.className("shipping-src-universal-partials-ShippingLocation-components-locationSelector-button-ShippingLocationSelectorButton__locationLabel");
-
+    public By MyAccountButtonTitleLocator = By.className("sf-OldMyAccount-sS_G2sunmDtZl9Tld5PR");
 }

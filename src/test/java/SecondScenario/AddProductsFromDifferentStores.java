@@ -91,6 +91,7 @@ public class AddProductsFromDifferentStores extends BaseTest{
         productDetailPage = new ProductDetailPage(driver);
         cartPage = new CartPage(driver);
         loginPage = new LoginPage(driver);
+        log = new Log();
         homePage.acceptCookies();
         log.info("Home page is directed.");
         homePage.moveAndClickCreateUserButton();

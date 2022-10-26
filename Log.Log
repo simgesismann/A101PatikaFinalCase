@@ -1,0 +1,19 @@
+2022-10-26 16:57:38,110 INFO  [Log] Home page is directed. 
+2022-10-26 16:57:42,773 INFO  [Log] Mouse is moved and click to User LogIn Button. 
+2022-10-26 16:57:48,235 INFO  [Log] Mail is typed 
+2022-10-26 16:57:51,363 INFO  [Log] Password is typed and login button is clicked. 
+2022-10-26 16:57:59,772 INFO  [Log] User is logged in. 
+2022-10-26 16:58:00,766 INFO  [Log] Product name is searched. 
+2022-10-26 16:58:09,568 INFO  [Log] Product page is directed. 
+2022-10-26 16:58:15,516 INFO  [Log] One of products is choosen. 
+2022-10-26 16:58:21,149 INFO  [Log] Window is handled. 
+2022-10-26 16:58:30,538 INFO  [Log] Product detail page is directed. 
+2022-10-26 16:58:54,613 INFO  [Log] Scrolled down and AddToCart Button is clicked 
+2022-10-26 16:58:55,049 INFO  [Log] Pop-up is closed 
+2022-10-26 16:58:55,135 INFO  [Log] Other stores options are displayed. 
+2022-10-26 16:59:06,590 INFO  [Log] Other store's AddToCart Button is clicked. 
+2022-10-26 16:59:06,744 INFO  [Log] Pop-up is closed 
+2022-10-26 16:59:11,758 INFO  [Log] Cart Page is directe. 
+2022-10-26 16:59:13,905 INFO  [Log] In cart page, added products are same. 
+2022-10-26 16:59:13,915 INFO  [Log] Product firm in ProductDetailPage is confirmed in CartPage 
+2022-10-26 16:59:13,916 INFO  [Log] Product name in ProductDetailPage is confirmed in CartPage 
