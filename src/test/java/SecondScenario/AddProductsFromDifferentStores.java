@@ -1,8 +1,5 @@
 package SecondScenario;
-import PageObjectModel.Pages.CartPage;
-import PageObjectModel.Pages.HomePage;
-import PageObjectModel.Pages.ProductDetailPage;
-import PageObjectModel.Pages.ProductsPage;
+import PageObjectModel.Pages.*;
 import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.Test;
 /**
@@ -14,6 +11,7 @@ public class AddProductsFromDifferentStores extends BaseTest{
     ProductsPage productsPage;
     ProductDetailPage productDetailPage;
     CartPage cartPage;
+    LoginPage loginPage;
     String productFirmNameInDetailPage;
     String productFirmNameInCartPage;
     String productNameInDetailPage;
@@ -46,6 +44,42 @@ public class AddProductsFromDifferentStores extends BaseTest{
         productDetailPage = new ProductDetailPage(driver);
         cartPage = new CartPage(driver);
         homePage.acceptCookies();
+        homePage.searchBarPage().typeProductNameInSearchBarText("şemsiye");
+        homePage.searchBarPage().clickSearchButton();
+        productsPage.assertProductPageIsDirected();
+        productsPage.chooseOneProduct();
+        productDetailPage.windowHandle();
+        productDetailPage.assertProductDetailPageIsDirected();
+        productDetailPage.rollAndClickAddToCartButton();
+        productDetailPage.assertAddCartButtonIsClicked();
+        productDetailPage.clickCloseButton();
+        productDetailPage.assertOtherBuyOptionsTitleIsDisplayed();
+        productNameInDetailPage = productDetailPage.getTextOfProductName();
+        productFirmNameInDetailPage = productDetailPage.getTextTitleOfOtherOptionsList().toUpperCase().replaceAll("\\p{M}", "");
+        productDetailPage.clickOtherOptionAddToCartButton();
+        productDetailPage.clickCloseButton();
+        homePage.clickToMyCartButton();
+        cartPage.assertCartPageIsDirected();
+        productNameInCartPage = cartPage.getTextOfProductNameInCartPage();
+        productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().toUpperCase().replaceAll("\\p{M}", "");
+        cartPage.assertAddedProductsAreSame();
+        Assertions.assertEquals(productFirmNameInCartPage, productFirmNameInDetailPage);
+        Assertions.assertTrue(productNameInCartPage.contains(productNameInDetailPage));
+    }
+    @Test(priority=2)
+    public void addProductsFromDifferentStoresWithLogin() throws InterruptedException {
+        homePage = new HomePage(driver);
+        productsPage = new ProductsPage(driver);
+        productDetailPage = new ProductDetailPage(driver);
+        cartPage = new CartPage(driver);
+        loginPage = new LoginPage(driver);
+        homePage.acceptCookies();
+        homePage.moveAndClickCreateUserButton();
+        loginPage.typeEmail();
+        loginPage.clickLogInButton();
+        loginPage.typePassword();
+        loginPage.clickLoginButtonAfterPassword();
+        homePage.assertUserLoggedIn();
         homePage.searchBarPage().typeProductNameInSearchBarText("şemsiye");
         homePage.searchBarPage().clickSearchButton();
         productsPage.assertProductPageIsDirected();

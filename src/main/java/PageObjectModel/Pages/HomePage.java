@@ -13,19 +13,19 @@ public class HomePage extends HomePageConstants {
     public void acceptCookies(){
         click(AcceptCookiesLocator);
     }
-    /*public void moveAndClickCreateUserButton(){
+    public void moveAndClickCreateUserButton(){
         moveToElement(LogInGenelButtonLocator);
-        click(CreateUserButtonLocator);
+        click(LogInButtonLocator);
     }
-    public void myAccountButtonIsDisplayed(){
-        Assertions.assertTrue(isDisplayed(MyAccountButtonLocator));
-    }*/
     public SearchBarPage searchBarPage(){
         return this.searchBarPage;
     }
     public void clickToMyCartButton(){
         scrollToTopOfPage();
         click(MyCartButtonLocator);
+    }
+    public void assertUserLoggedIn(){
+        Assertions.assertTrue(isDisplayed(SelectLocationButtonLocator));
     }
 
 }
