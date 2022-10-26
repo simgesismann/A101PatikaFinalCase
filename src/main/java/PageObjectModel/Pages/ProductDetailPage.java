@@ -15,6 +15,10 @@ public class ProductDetailPage extends ProductDetailPageConstants {
     public ProductDetailPage(WebDriver driver) {
         super(driver);
     }
+
+    /**
+     * "windowHandle" is to change window to operate other methods on it
+     */
     public void windowHandle(){
         List<String> pages = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(pages.get(1));
