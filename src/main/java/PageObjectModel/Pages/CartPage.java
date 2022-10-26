@@ -24,7 +24,7 @@ public class CartPage extends CartPageConstants {
         return getText(ProductNameInCartPageLocator);
     }
     /**
-     * @method "assertAddedProductsAreSame" is to confirm that products in cart page has same name.
+     * @method "assertAddedProductsAreSame" is to confirm that first two products in cart page has same names.
      */
     public void assertAddedProductsAreSame(){
         List<WebElement> nameList = findAll(ProductNameInCartPageLocator);
