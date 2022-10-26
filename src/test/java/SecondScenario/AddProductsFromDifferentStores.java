@@ -37,6 +37,7 @@ public class AddProductsFromDifferentStores extends BaseTest{
      * @returns "getTextOfProductNameInCartPage" returns product's name in cart page
      * @returns  "getTextOfOtherFirmTitleInCartPage" returns title of store name in cart page
      * @method "assertCartPageIsDirected" is to confirm that page is directed by finding element
+     * @method "assertAddedProductsAreSame" is to confirm that user added same products
      */
     @Test(priority = 1)
     public void addProductsFromDifferentStoresWithoutLogin() throws InterruptedException {
@@ -63,6 +64,7 @@ public class AddProductsFromDifferentStores extends BaseTest{
         cartPage.assertCartPageIsDirected();
         productNameInCartPage = cartPage.getTextOfProductNameInCartPage();
         productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().toUpperCase().replaceAll("\\p{M}", "");
+        cartPage.assertAddedProductsAreSame();
         Assertions.assertEquals(productFirmNameInCartPage, productFirmNameInDetailPage);
         Assertions.assertTrue(productNameInCartPage.contains(productNameInDetailPage));
     }

@@ -171,3 +171,17 @@
 2022-10-25 16:52:15,638 INFO  [Log] Pop-up is closed. 
 2022-10-25 16:52:17,969 INFO  [Log] My cart button is clicked to see products in it. 
 2022-10-25 16:52:20,302 INFO  [Log] Cart Page is directed. 
+2022-10-26 11:27:48,313 INFO  [Log] Navigated to website. 
+2022-10-26 11:27:54,043 INFO  [Log] Product name is typed in search bar. 
+2022-10-26 11:27:54,355 INFO  [Log] Product is searching. 
+2022-10-26 11:28:03,583 INFO  [Log] Product page is directed. 
+2022-10-26 11:28:10,035 INFO  [Log] A product from list is chosen. 
+2022-10-26 11:28:14,068 INFO  [Log] Window is handled. 
+2022-10-26 11:28:24,596 INFO  [Log] Product Details Page is directed. 
+2022-10-26 11:28:48,847 INFO  [Log] Add Cart Button is clicked. 
+2022-10-26 11:28:49,420 INFO  [Log] Pop-up is closed. 
+2022-10-26 11:28:49,522 INFO  [Log] Other options of store are displayed on page. 
+2022-10-26 11:28:59,742 INFO  [Log] Other options' Add To Cart Button is clicked. 
+2022-10-26 11:28:59,883 INFO  [Log] Pop-up is closed. 
+2022-10-26 11:29:02,824 INFO  [Log] My cart button is clicked to see products in it. 
+2022-10-26 11:29:05,999 INFO  [Log] Cart Page is directed. 

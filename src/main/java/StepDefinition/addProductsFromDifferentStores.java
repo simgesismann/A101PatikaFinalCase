@@ -93,7 +93,7 @@ public class addProductsFromDifferentStores {
         log.info("Window is handled.");
         productDetailPage.assertProductDetailPageIsDirected();
         log.info("Product Details Page is directed.");
-        productFirmNameInDetailPage = productDetailPage.getTextTitleOfOtherOptionsList();
+        productFirmNameInDetailPage = productDetailPage.getTextTitleOfOtherOptionsList().toUpperCase().replaceAll("\\p{M}", "");
         productNameInDetailPage = productDetailPage.getTextOfProductName();
         productDetailPage.rollAndClickAddToCartButton();
         productDetailPage.assertAddCartButtonIsClicked();
@@ -138,8 +138,9 @@ public class addProductsFromDifferentStores {
         Driver driver1 = new Driver();
         cartPage.assertCartPageIsDirected();
         log.info("Cart Page is directed.");
-        productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().replaceAll("\\p{M}", "");;
+        productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().toUpperCase().replaceAll("\\p{M}", "");
         productNameInCartPage = cartPage.getTextOfProductNameInCartPage();
+        cartPage.assertAddedProductsAreSame();
         Assertions.assertEquals(productFirmNameInCartPage.toUpperCase(),productFirmNameInDetailPage.toUpperCase());
         Assertions.assertTrue(productNameInCartPage.contains(productNameInDetailPage));
         driver1.closeAllTabs();
