@@ -143,3 +143,31 @@
 2022-10-25 16:43:09,315 INFO  [Log] Pop-up is closed. 
 2022-10-25 16:43:11,667 INFO  [Log] My cart button is clicked to see products in it. 
 2022-10-25 16:43:13,442 INFO  [Log] Cart Page is directed. 
+2022-10-25 16:46:42,044 INFO  [Log] Navigated to website. 
+2022-10-25 16:46:50,385 INFO  [Log] Product name is typed in search bar. 
+2022-10-25 16:46:50,637 INFO  [Log] Product is searching. 
+2022-10-25 16:47:00,300 INFO  [Log] Product page is directed. 
+2022-10-25 16:47:06,927 INFO  [Log] A product from list is chosen. 
+2022-10-25 16:47:11,607 INFO  [Log] Window is handled. 
+2022-10-25 16:47:22,261 INFO  [Log] Product Details Page is directed. 
+2022-10-25 16:47:46,869 INFO  [Log] Add Cart Button is clicked. 
+2022-10-25 16:47:47,510 INFO  [Log] Pop-up is closed. 
+2022-10-25 16:47:47,638 INFO  [Log] Other options of store are displayed on page. 
+2022-10-25 16:47:58,005 INFO  [Log] Other options' Add To Cart Button is clicked. 
+2022-10-25 16:47:58,200 INFO  [Log] Pop-up is closed. 
+2022-10-25 16:48:02,078 INFO  [Log] My cart button is clicked to see products in it. 
+2022-10-25 16:48:03,320 INFO  [Log] Cart Page is directed. 
+2022-10-25 16:51:05,147 INFO  [Log] Navigated to website. 
+2022-10-25 16:51:12,716 INFO  [Log] Product name is typed in search bar. 
+2022-10-25 16:51:12,879 INFO  [Log] Product is searching. 
+2022-10-25 16:51:19,373 INFO  [Log] Product page is directed. 
+2022-10-25 16:51:25,084 INFO  [Log] A product from list is chosen. 
+2022-10-25 16:51:30,952 INFO  [Log] Window is handled. 
+2022-10-25 16:51:40,061 INFO  [Log] Product Details Page is directed. 
+2022-10-25 16:52:04,599 INFO  [Log] Add Cart Button is clicked. 
+2022-10-25 16:52:05,103 INFO  [Log] Pop-up is closed. 
+2022-10-25 16:52:05,212 INFO  [Log] Other options of store are displayed on page. 
+2022-10-25 16:52:15,480 INFO  [Log] Other options' Add To Cart Button is clicked. 
+2022-10-25 16:52:15,638 INFO  [Log] Pop-up is closed. 
+2022-10-25 16:52:17,969 INFO  [Log] My cart button is clicked to see products in it. 
+2022-10-25 16:52:20,302 INFO  [Log] Cart Page is directed. 
