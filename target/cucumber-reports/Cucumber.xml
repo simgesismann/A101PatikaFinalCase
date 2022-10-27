@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="200.655">
-    <testcase classname="Feature to test adding products" name="tests to add product from different stores without login" time="112.452">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="195.165">
+    <testcase classname="Feature to test adding products" name="tests to add product from different stores without login" time="103.751">
         <system-out><![CDATA[Given navigate to website...................................................passed
 And accept cookies..........................................................passed
 And type "şemsiye"..........................................................passed
@@ -13,7 +13,7 @@ And confirm product chosen from another store is on cart page...............pass
 Then confirm chosen products are on cart page...............................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Feature to test adding products" name="tests to add product from different stores with login" time="87.704">
+    <testcase classname="Feature to test adding products" name="tests to add product from different stores with login" time="90.986">
         <system-out><![CDATA[Given navigate to website...................................................passed
 And user log in.............................................................passed
 And confirm user is logged in...............................................passed
