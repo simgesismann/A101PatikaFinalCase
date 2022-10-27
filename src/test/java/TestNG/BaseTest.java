@@ -37,12 +37,14 @@ public class BaseTest {
                 driver = new EdgeDriver();
                 break;
         }
+        log = new Log();
         log.info("---TestNG Test Method initialized---");
         driver.manage().window().maximize();
         driver.get("https://www.hepsiburada.com");
     }
     @AfterMethod
     public void tearDown(){
+        log = new Log();
         log.info("---TestNG Test tearing down all tabs---");
         for(String handle : driver.getWindowHandles()) {
             driver.switchTo().window(handle);
