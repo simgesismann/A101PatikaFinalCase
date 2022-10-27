@@ -1,5 +1,6 @@
 package TestNG;
 
+import Log.Log;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +13,7 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTest {
     WebDriver driver;
     String driverType = "chrome";
+    Log log ;
     @BeforeMethod
     public void setUp(){
         switch (driverType){
@@ -35,11 +37,13 @@ public class BaseTest {
                 driver = new EdgeDriver();
                 break;
         }
+        log.info("---TestNG Test Method initialized---");
         driver.manage().window().maximize();
         driver.get("https://www.hepsiburada.com");
     }
     @AfterMethod
     public void tearDown(){
+        log.info("---TestNG Test tearing down all tabs---");
         for(String handle : driver.getWindowHandles()) {
             driver.switchTo().window(handle);
             driver.close();

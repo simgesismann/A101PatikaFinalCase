@@ -23,6 +23,7 @@ public class addProductsFromDifferentStores {
     public void navigate_to_website() {
         driver = Driver.getDriver();
         log = new Log();
+        log.info("---BDD Test is initialized---");
         driver.get("https://www.hepsiburada.com/");
         driver.manage().window().maximize();
         log.info("Navigated to website.");
@@ -47,8 +48,15 @@ public class addProductsFromDifferentStores {
         homePage.assertUserLoggedIn();
         log.info("User is logged in.");
     }
+    @And("accept cookies")
+    public void acceptCookies(){
+        homePage = new HomePage(driver);
+        homePage.acceptCookies();
+        log.info("Cookies are accepted.");
+    }
     @And("type {string}")
     public void type(String productName) {
+        homePage = new HomePage(driver);
         homePage.searchBarPage().typeProductNameInSearchBarText(productName);
         log = new Log();
         log.info("Product name is typed in search bar.");
@@ -105,20 +113,28 @@ public class addProductsFromDifferentStores {
         cartPage.assertCartPageIsDirected();
         log.info("Cart Page is directed.");
     }
-    @Then("confirm chosen products are on cart page")
-    public void confirm_chosen_products_are_on_cart_page() {
+    @And("confirm product chosen from another store is on cart page")
+    public void confirmProductChosenFromAnotherStoreIsOnCartPage(){
         cartPage = new CartPage(driver);
         productNameInCartPage = cartPage.getTextOfProductNameInCartPage();
         productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().toUpperCase().replaceAll("\\p{M}", "");
-        cartPage.assertAddedProductsAreSame();
-        log.info("In cart page, added products are same.");
         Assertions.assertEquals(productFirmNameInCartPage, productFirmNameInDetailPage);
         log.info("Product firm in ProductDetailPage is confirmed in CartPage");
         Assertions.assertTrue(productNameInCartPage.contains(productNameInDetailPage));
         log.info("Product name in ProductDetailPage is confirmed in CartPage");
     }
+    @Then("confirm chosen products are on cart page")
+    public void confirm_chosen_products_are_on_cart_page() {
+        cartPage = new CartPage(driver);
+        cartPage.assertAddedProductsAreSame();
+        log.info("In cart page, added products are same.");
+
+    }
+
     @Then("close all tabs")
     public void closeAllTabs(){
+        log = new Log();
+        log.info("---BDD TEST END, Closing all tabs---");
         Driver driver1 = new Driver();
         driver1.closeAllTabs();
     }

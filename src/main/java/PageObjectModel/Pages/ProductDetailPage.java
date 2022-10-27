@@ -21,9 +21,9 @@ public class ProductDetailPage extends ProductDetailPageConstants {
      */
     public void windowHandle(){
         List<String> pages = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(pages.get(1));
+        int pageCount = pages.size();
+        driver.switchTo().window(pages.get(pageCount-1));
     }
-
     /**
      * @method "assertProductDetailPageIsDirected" is to confirm that page is directed by finding element
      */

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="200.655">
+    <testcase classname="Feature to test adding products" name="tests to add product from different stores without login" time="112.452">
+        <system-out><![CDATA[Given navigate to website...................................................passed
+And accept cookies..........................................................passed
+And type "şemsiye"..........................................................passed
+And search product..........................................................passed
+And choose a product........................................................passed
+And add product to cart.....................................................passed
+And add same product from another store to cart.............................passed
+And navigate to cart page...................................................passed
+And confirm product chosen from another store is on cart page...............passed
+Then confirm chosen products are on cart page...............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Feature to test adding products" name="tests to add product from different stores with login" time="87.704">
+        <system-out><![CDATA[Given navigate to website...................................................passed
+And user log in.............................................................passed
+And confirm user is logged in...............................................passed
+And type "şemsiye"..........................................................passed
+And search product..........................................................passed
+And choose a product........................................................passed
+And add product to cart.....................................................passed
+And add same product from another store to cart.............................passed
+And navigate to cart page...................................................passed
+Then confirm chosen products are on cart page...............................passed
+Then close all tabs.........................................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
