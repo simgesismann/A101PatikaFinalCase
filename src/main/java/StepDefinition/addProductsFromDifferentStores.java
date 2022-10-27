@@ -26,8 +26,6 @@ public class addProductsFromDifferentStores {
         driver.get("https://www.hepsiburada.com/");
         driver.manage().window().maximize();
         log.info("Navigated to website.");
-        homePage = new HomePage(driver);
-        homePage.acceptCookies();
     }
     @Given("user log in")
     public void user_log_in() {

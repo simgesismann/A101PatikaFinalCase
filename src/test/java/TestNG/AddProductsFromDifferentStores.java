@@ -1,4 +1,4 @@
-package SecondScenario;
+package TestNG;
 import Log.Log;
 import PageObjectModel.Pages.*;
 import org.junit.jupiter.api.Assertions;
@@ -54,7 +54,7 @@ public class AddProductsFromDifferentStores extends BaseTest{
         log.info("Pop-up is closed");
         homePage.clickToMyCartButton();
         cartPage.assertCartPageIsDirected();
-        log.info("Cart Page is directe.");
+        log.info("Cart Page is directed.");
         productNameInCartPage = cartPage.getTextOfProductNameInCartPage();
         productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().toUpperCase().replaceAll("\\p{M}", "");
         cartPage.assertAddedProductsAreSame();
@@ -115,9 +115,5 @@ public class AddProductsFromDifferentStores extends BaseTest{
         productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().toUpperCase().replaceAll("\\p{M}", "");
         cartPage.assertAddedProductsAreSame();
         log.info("In cart page, added products are same.");
-        Assertions.assertEquals(productFirmNameInCartPage, productFirmNameInDetailPage);
-        log.info("Product firm in ProductDetailPage is confirmed in CartPage");
-        Assertions.assertTrue(productNameInCartPage.contains(productNameInDetailPage));
-        log.info("Product name in ProductDetailPage is confirmed in CartPage");
     }
 }

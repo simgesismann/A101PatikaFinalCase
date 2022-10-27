@@ -18,9 +18,16 @@ public class HomePage extends HomePageConstants {
      * @method "acceptCookies" is to click accept button for cookie.
      */
     public void acceptCookies(){
-        if (isDisplayed(AcceptCookiesLocator)){
-            click(AcceptCookiesLocator);
+        Boolean display = true;
+        while (display){
+            if (isDisplayed(AcceptCookiesLocator)){
+                click(AcceptCookiesLocator);
+                display = false;
+            }else{
+                break;
+            }
         }
+
     }
     public void moveAndClickLoginUserButton(){
         moveToElement(LogInGenelButtonLocator);
