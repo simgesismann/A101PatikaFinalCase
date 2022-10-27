@@ -3,6 +3,10 @@ package PageObjectModel.Pages;
 import Utilities.PageConstants.HomePageConstants;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class HomePage extends HomePageConstants {
     SearchBarPage searchBarPage;
@@ -14,10 +18,14 @@ public class HomePage extends HomePageConstants {
      * @method "acceptCookies" is to click accept button for cookie.
      */
     public void acceptCookies(){
-        click(AcceptCookiesLocator);
+        if (isDisplayed(AcceptCookiesLocator)){
+            click(AcceptCookiesLocator);
+        }
     }
-    public void moveAndClickCreateUserButton(){
+    public void moveAndClickLoginUserButton(){
         moveToElement(LogInGenelButtonLocator);
+        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(60));
+        w.until(ExpectedConditions.elementToBeClickable(LogInButtonLocator));
         click(LogInButtonLocator);
     }
     /**
