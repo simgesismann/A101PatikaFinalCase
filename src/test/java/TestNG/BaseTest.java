@@ -41,6 +41,7 @@ public class BaseTest {
         log.info("---TestNG Test Method initialized---");
         driver.manage().window().maximize();
         driver.get("https://www.hepsiburada.com");
+        log.info("Home page is directed.");
     }
     @AfterMethod
     public void tearDown(){

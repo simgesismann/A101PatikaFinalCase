@@ -1,5 +1,6 @@
 package PageObjectModel.Pages;
 
+import Log.Log;
 import Utilities.PageConstants.HomePageConstants;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import java.time.Duration;
 
 public class HomePage extends HomePageConstants {
     SearchBarPage searchBarPage;
+    Log log;
     public HomePage(WebDriver driver) {
         super(driver);
         searchBarPage = new SearchBarPage(driver);
@@ -18,6 +20,7 @@ public class HomePage extends HomePageConstants {
      * @method "acceptCookies" is to click accept button for cookie.
      */
     public void acceptCookies(){
+        log = new Log();
         Boolean display = true;
         while (display){
             if (isDisplayed(AcceptCookiesLocator)){
@@ -27,13 +30,15 @@ public class HomePage extends HomePageConstants {
                 break;
             }
         }
-
+        log.info("Home page is directed.");
     }
     public void moveAndClickLoginUserButton(){
+        log = new Log();
         moveToElement(LogInGenelButtonLocator);
         WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(60));
         w.until(ExpectedConditions.elementToBeClickable(LogInButtonLocator));
         click(LogInButtonLocator);
+        log.info("Mouse is moved and click to User LogIn Button.");
     }
     /**
      * @method "searchBarPage" is to call search bar section to reach methods in search bar.
@@ -53,7 +58,9 @@ public class HomePage extends HomePageConstants {
      * text inside of my account name. If that string is not empty than user is logged in.
      */
     public void assertUserLoggedIn(){
+        log = new Log();
         String myAccount = getText(MyAccountButtonTitleLocator);
         Assertions.assertFalse((myAccount==""));
+        log.info("User is logged in.");
     }
 }
