@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -14,7 +15,7 @@ public class BaseTest {
     WebDriver driver;
     String driverType = "chrome";
     Log log ;
-    @BeforeMethod
+    @BeforeClass
     public void setUp(){
         switch (driverType){
             case("chrome"):
@@ -43,7 +44,7 @@ public class BaseTest {
         driver.get("https://www.hepsiburada.com");
         log.info("Home page is directed.");
     }
-    @AfterMethod
+    @AfterClass
     public void tearDown(){
         log = new Log();
         log.info("---TestNG Test tearing down all tabs---");

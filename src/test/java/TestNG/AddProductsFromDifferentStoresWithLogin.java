@@ -25,7 +25,7 @@ public class AddProductsFromDifferentStoresWithLogin extends BaseTest{
         cartPage = new CartPage(driver);
         loginPage = new LoginPage(driver);
         log = new Log();
-        homePage.acceptCookies();
+        //homePage.acceptCookies();
         homePage.moveAndClickLoginUserButton();
         loginPage.typeEmail();
         loginPage.clickLogInButton();
