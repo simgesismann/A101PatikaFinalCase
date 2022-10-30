@@ -1,32 +1,37 @@
 package TestNG;
+
 import Log.Log;
 import PageObjectModel.Pages.*;
-import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-/**
- * This class tests addition products from different stores.
- *  @author Simge ŞİŞMAN
- */
-public class AddProductsFromDifferentStores extends BaseTest{
+
+public class AddProductsFromDifferentStoresWithLogin extends BaseTest{
+    WebDriver driver;
     HomePage homePage;
     ProductsPage productsPage;
     ProductDetailPage productDetailPage;
     CartPage cartPage;
     LoginPage loginPage;
     Log log;
-    String productFirmNameInDetailPage;
-    String productFirmNameInCartPage;
-    String productNameInDetailPage;
-    String productNameInCartPage;
-
+    String productNameInDetailPage ;
+    String productNameInCartPage ;
+    String productFirmNameInCartPage ;
+    String productFirmNameInDetailPage ;
     @Test
-    public void addProductsFromDifferentStoresWithoutLogin() throws InterruptedException {
+    public void addProductsFromDifferentStoresWithLogin() throws InterruptedException {
         homePage = new HomePage(driver);
         productsPage = new ProductsPage(driver);
         productDetailPage = new ProductDetailPage(driver);
         cartPage = new CartPage(driver);
+        loginPage = new LoginPage(driver);
         log = new Log();
         homePage.acceptCookies();
+        homePage.moveAndClickLoginUserButton();
+        loginPage.typeEmail();
+        loginPage.clickLogInButton();
+        loginPage.typePassword();
+        loginPage.clickLoginButtonAfterPassword();
+        homePage.assertUserLoggedIn();
         homePage.searchBarPage().typeProductNameInSearchBarText("şemsiye");
         homePage.searchBarPage().clickSearchButton();
         productsPage.assertProductPageIsDirected();
@@ -46,9 +51,5 @@ public class AddProductsFromDifferentStores extends BaseTest{
         productNameInCartPage = cartPage.getTextOfProductNameInCartPage();
         productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().toUpperCase().replaceAll("\\p{M}", "");
         cartPage.assertAddedProductsAreSame();
-        Assertions.assertEquals(productFirmNameInCartPage, productFirmNameInDetailPage);
-        log.info("Product firm in ProductDetailPage is confirmed in CartPage");
-        Assertions.assertTrue(productNameInCartPage.contains(productNameInDetailPage));
-        log.info("Product name in ProductDetailPage is confirmed in CartPage");
     }
 }

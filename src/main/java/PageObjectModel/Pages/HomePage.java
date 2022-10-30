@@ -30,7 +30,6 @@ public class HomePage extends HomePageConstants {
                 break;
             }
         }
-        log.info("Home page is directed.");
     }
     public void moveAndClickLoginUserButton(){
         log = new Log();

@@ -33,14 +33,10 @@ public class addProductsFromDifferentStores {
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
         homePage.moveAndClickLoginUserButton();
-        log.info("Mouse is moved and click to User LogIn Button.");
         loginPage.typeEmail();
         loginPage.clickLogInButton();
-        log.info("Mail is typed");
         loginPage.typePassword();
         loginPage.clickLoginButtonAfterPassword();
-        log.info("Password is typed and login button is clicked.");
-
     }
     @And("confirm user is logged in")
     public void confirm_user_is_logged_in() {
