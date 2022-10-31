@@ -18,7 +18,6 @@ public class AddProductsFromDifferentStores extends BaseTest{
     String productFirmNameInCartPage;
     String productNameInDetailPage;
     String productNameInCartPage;
-
     @Test
     public void addProductsFromDifferentStoresWithoutLogin() throws InterruptedException {
         homePage = new HomePage(driver);
@@ -51,4 +50,5 @@ public class AddProductsFromDifferentStores extends BaseTest{
         Assertions.assertTrue(productNameInCartPage.contains(productNameInDetailPage));
         log.info("Product name in ProductDetailPage is confirmed in CartPage");
     }
+
 }

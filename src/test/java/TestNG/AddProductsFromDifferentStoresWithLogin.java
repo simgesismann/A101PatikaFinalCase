@@ -1,22 +1,20 @@
 package TestNG;
-
 import Log.Log;
 import PageObjectModel.Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class AddProductsFromDifferentStoresWithLogin extends BaseTest{
-    WebDriver driver;
     HomePage homePage;
     ProductsPage productsPage;
     ProductDetailPage productDetailPage;
     CartPage cartPage;
     LoginPage loginPage;
     Log log;
-    String productNameInDetailPage ;
-    String productNameInCartPage ;
-    String productFirmNameInCartPage ;
-    String productFirmNameInDetailPage ;
+    String productFirmNameInDetailPage;
+    String productFirmNameInCartPage;
+    String productNameInDetailPage;
+    String productNameInCartPage;
     @Test
     public void addProductsFromDifferentStoresWithLogin() throws InterruptedException {
         homePage = new HomePage(driver);
@@ -25,7 +23,7 @@ public class AddProductsFromDifferentStoresWithLogin extends BaseTest{
         cartPage = new CartPage(driver);
         loginPage = new LoginPage(driver);
         log = new Log();
-        //homePage.acceptCookies();
+        homePage.acceptCookies();
         homePage.moveAndClickLoginUserButton();
         loginPage.typeEmail();
         loginPage.clickLogInButton();

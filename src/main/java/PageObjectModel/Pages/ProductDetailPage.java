@@ -2,12 +2,9 @@ package PageObjectModel.Pages;
 
 import Log.Log;
 import Utilities.PageConstants.ProductDetailPageConstants;
-import Utilities.PageConstants.ProductPagesConstants;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.asserts.Assertion;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +45,7 @@ public class ProductDetailPage extends ProductDetailPageConstants {
      */
     public void rollAndClickAddToCartButton() throws InterruptedException {
         log = new Log();
+        wait(10);
         rollUntilFindElementAndClick(AddToCartButtonLocator);
         wait(10);
         log.info("Scrolled down to click AddToCart Button");

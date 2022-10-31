@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-27T13:06:14Z" name="Default Suite" finished-at="2022-10-27T13:10:09Z" duration-ms="235345">
+  <suite started-at="2022-10-31T17:17:54 TRT" name="Default Suite" finished-at="2022-10-31T17:22:09 TRT" duration-ms="255449">
     <groups>
     </groups>
-    <test started-at="2022-10-27T13:06:14Z" name="A101PatikaFinalCase" finished-at="2022-10-27T13:10:09Z" duration-ms="235345">
+    <test started-at="2022-10-31T17:17:54 TRT" name="A101PatikaFinalCase" finished-at="2022-10-31T17:22:09 TRT" duration-ms="255449">
       <class name="TestNG.AddProductsFromDifferentStores">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:TestNG.AddProductsFromDifferentStores@5f71c76a]" started-at="2022-10-27T13:06:14Z" name="setUp" finished-at="2022-10-27T13:06:40Z" duration-ms="26222" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:TestNG.AddProductsFromDifferentStores@58fdd99]" started-at="2022-10-31T17:17:54 TRT" name="setUp" finished-at="2022-10-31T17:18:24 TRT" duration-ms="29895" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addProductsFromDifferentStoresWithoutLogin()[pri:1, instance:TestNG.AddProductsFromDifferentStores@5f71c76a]" started-at="2022-10-27T13:06:40Z" name="addProductsFromDifferentStoresWithoutLogin" finished-at="2022-10-27T13:07:59Z" duration-ms="78393" status="PASS">
+        <test-method signature="addProductsFromDifferentStoresWithoutLogin()[pri:1, instance:TestNG.AddProductsFromDifferentStores@58fdd99]" started-at="2022-10-31T17:18:24 TRT" name="addProductsFromDifferentStoresWithoutLogin" finished-at="2022-10-31T17:19:55 TRT" duration-ms="90669" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addProductsFromDifferentStoresWithoutLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNG.AddProductsFromDifferentStores@5f71c76a]" started-at="2022-10-27T13:07:59Z" name="tearDown" finished-at="2022-10-27T13:08:00Z" duration-ms="786" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNG.AddProductsFromDifferentStores@58fdd99]" started-at="2022-10-31T17:19:55 TRT" name="tearDown" finished-at="2022-10-31T17:19:56 TRT" duration-ms="974" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:TestNG.AddProductsFromDifferentStores@5f71c76a]" started-at="2022-10-27T13:08:00Z" name="setUp" finished-at="2022-10-27T13:08:38Z" duration-ms="38122" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:TestNG.AddProductsFromDifferentStores@58fdd99]" started-at="2022-10-31T17:19:56 TRT" name="setUp" finished-at="2022-10-31T17:20:25 TRT" duration-ms="29857" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addProductsFromDifferentStoresWithLogin()[pri:2, instance:TestNG.AddProductsFromDifferentStores@5f71c76a]" started-at="2022-10-27T13:08:38Z" name="addProductsFromDifferentStoresWithLogin" finished-at="2022-10-27T13:10:07Z" duration-ms="89822" status="PASS">
+        <test-method signature="addProductsFromDifferentStoresWithLogin()[pri:2, instance:TestNG.AddProductsFromDifferentStores@58fdd99]" started-at="2022-10-31T17:20:25 TRT" name="addProductsFromDifferentStoresWithLogin" finished-at="2022-10-31T17:22:08 TRT" duration-ms="102693" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addProductsFromDifferentStoresWithLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNG.AddProductsFromDifferentStores@5f71c76a]" started-at="2022-10-27T13:10:07Z" name="tearDown" finished-at="2022-10-27T13:10:09Z" duration-ms="1939" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNG.AddProductsFromDifferentStores@58fdd99]" started-at="2022-10-31T17:22:08 TRT" name="tearDown" finished-at="2022-10-31T17:22:09 TRT" duration-ms="1286" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
