@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="A101PatikaFinalCase(failed)">
     <classes>
-      <class name="TestNG.AddProductsFromDifferentStores">
+      <class name="TestNG.AddProductsFromDifferentStoresWithoutLogin">
         <methods>
           <include name="tearDown"/>
           <include name="addProductsFromDifferentStoresWithLogin"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- TestNG.AddProductsFromDifferentStores -->
+      </class> <!-- TestNG.AddProductsFromDifferentStoresWithoutLogin -->
     </classes>
   </test> <!-- A101PatikaFinalCase(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

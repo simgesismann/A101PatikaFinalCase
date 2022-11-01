@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
  * This class tests addition products from different stores.
  *  @author Simge ŞİŞMAN
  */
-public class AddProductsFromDifferentStores extends BaseTest{
+public class AddProductsFromDifferentStoresWithoutLogin extends BaseTest{
     HomePage homePage;
     ProductsPage productsPage;
     ProductDetailPage productDetailPage;

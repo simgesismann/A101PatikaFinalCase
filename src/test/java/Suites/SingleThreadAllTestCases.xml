@@ -3,7 +3,7 @@
 <test name = "Tests" parallel = "none">
     <parameter name="browser" value="chrome" />
     <classes>
-        <class name = "TestNG.AddProductsFromDifferentStores" />
+        <class name = "TestNG.AddProductsFromDifferentStoresWithoutLogin" />
         <class name = "TestNG.AddProductsFromDifferentStoresWithLogin" />
     </classes>
 </test>
