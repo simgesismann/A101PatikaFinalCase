@@ -72,3 +72,81 @@
 2022-10-27 16:15:25,941 INFO  [Log] Cart Page is directed. 
 2022-10-27 16:15:26,374 INFO  [Log] In cart page, added products are same. 
 2022-10-27 16:15:26,388 INFO  [Log] ---BDD TEST END, Closing all tabs---
+2022-11-01 17:18:33,974 INFO  [Log] ---TestNG Test Method initialized--- 
+2022-11-01 17:18:56,583 INFO  [Log] Home page is directed. 
+2022-11-01 17:19:05,519 INFO  [Log] Mouse is moved and click to User LogIn Button. 
+2022-11-01 17:19:10,478 INFO  [Log] Mail is typed 
+2022-11-01 17:19:12,727 INFO  [Log] Password is typed and login button is clicked. 
+2022-11-01 17:19:18,929 INFO  [Log] User is logged in. 
+2022-11-01 17:19:19,946 INFO  [Log] Product name is typed in search bar. 
+2022-11-01 17:19:20,069 INFO  [Log] Product name is searched. 
+2022-11-01 17:19:28,125 INFO  [Log] Product page is directed. 
+2022-11-01 17:19:28,629 INFO  [Log] ---TestNG Test tearing down all tabs--- 
+2022-11-01 17:19:34,399 INFO  [Log] ---TestNG Test Method initialized--- 
+2022-11-01 17:19:36,218 INFO  [Log] Home page is directed. 
+2022-11-01 17:23:06,796 INFO  [Log] ---TestNG Test Method initialized--- 
+2022-11-01 17:23:30,502 INFO  [Log] Home page is directed. 
+2022-11-01 17:23:40,254 INFO  [Log] Mouse is moved and click to User LogIn Button. 
+2022-11-01 17:23:45,215 INFO  [Log] Mail is typed 
+2022-11-01 17:23:46,958 INFO  [Log] Password is typed and login button is clicked. 
+2022-11-01 17:23:53,270 INFO  [Log] User is logged in. 
+2022-11-01 17:23:54,157 INFO  [Log] Product name is typed in search bar. 
+2022-11-01 17:23:54,296 INFO  [Log] Product name is searched. 
+2022-11-01 17:24:03,278 INFO  [Log] Product page is directed. 
+2022-11-01 17:27:17,303 INFO  [Log] One of products is chosen. 
+2022-11-01 17:27:17,791 INFO  [Log] Window is handled. 
+2022-11-01 17:27:18,428 INFO  [Log] Product detail page is directed. 
+2022-11-01 17:27:40,867 INFO  [Log] Scrolled down to click AddToCart Button 
+2022-11-01 17:27:51,111 INFO  [Log] AddToCart Button is clicked 
+2022-11-01 17:27:51,699 INFO  [Log] Pop-up is closed 
+2022-11-01 17:27:51,824 INFO  [Log] Other stores options are displayed. 
+2022-11-01 17:28:02,464 INFO  [Log] Other store's AddToCart Button is clicked. 
+2022-11-01 17:28:02,683 INFO  [Log] Pop-up is closed 
+2022-11-01 17:28:06,251 INFO  [Log] Cart Page is directed. 
+2022-11-01 17:28:07,306 INFO  [Log] In cart page, added products are same. 
+2022-11-01 17:28:07,348 INFO  [Log] ---TestNG Test tearing down all tabs--- 
+2022-11-01 17:28:13,663 INFO  [Log] ---TestNG Test Method initialized--- 
+2022-11-01 17:28:35,046 INFO  [Log] Home page is directed. 
+2022-11-01 17:28:42,168 INFO  [Log] Product name is typed in search bar. 
+2022-11-01 17:28:42,344 INFO  [Log] Product name is searched. 
+2022-11-01 17:28:51,858 INFO  [Log] Product page is directed. 
+2022-11-01 17:40:11,936 INFO  [Log] ---TestNG Test Method initialized--- 
+2022-11-01 17:40:36,313 INFO  [Log] Home page is directed. 
+2022-11-01 17:40:44,885 INFO  [Log] Mouse is moved and click to User LogIn Button. 
+2022-11-01 17:40:50,163 INFO  [Log] Mail is typed 
+2022-11-01 17:40:52,056 INFO  [Log] Password is typed and login button is clicked. 
+2022-11-01 17:41:00,003 INFO  [Log] User is logged in. 
+2022-11-01 17:41:01,066 INFO  [Log] Product name is typed in search bar. 
+2022-11-01 17:41:01,216 INFO  [Log] Product name is searched. 
+2022-11-01 17:41:09,630 INFO  [Log] Product page is directed. 
+2022-11-01 17:41:16,227 INFO  [Log] One of products is chosen. 
+2022-11-01 17:41:22,369 INFO  [Log] Window is handled. 
+2022-11-01 17:41:33,233 INFO  [Log] Product detail page is directed. 
+2022-11-01 17:41:55,295 INFO  [Log] Scrolled down to click AddToCart Button 
+2022-11-01 17:42:05,402 INFO  [Log] AddToCart Button is clicked 
+2022-11-01 17:42:05,986 INFO  [Log] Pop-up is closed 
+2022-11-01 17:42:06,167 INFO  [Log] Other stores options are displayed. 
+2022-11-01 17:42:17,669 INFO  [Log] Other store's AddToCart Button is clicked. 
+2022-11-01 17:42:17,926 INFO  [Log] Pop-up is closed 
+2022-11-01 17:42:22,846 INFO  [Log] Cart Page is directed. 
+2022-11-01 17:42:24,908 INFO  [Log] In cart page, added products are same. 
+2022-11-01 17:42:24,962 INFO  [Log] ---TestNG Test tearing down all tabs--- 
+2022-11-01 17:42:31,661 INFO  [Log] ---TestNG Test Method initialized--- 
+2022-11-01 17:42:56,598 INFO  [Log] Home page is directed. 
+2022-11-01 17:43:04,497 INFO  [Log] Product name is typed in search bar. 
+2022-11-01 17:43:04,735 INFO  [Log] Product name is searched. 
+2022-11-01 17:43:15,189 INFO  [Log] Product page is directed. 
+2022-11-01 17:43:21,882 INFO  [Log] One of products is chosen. 
+2022-11-01 17:43:26,292 INFO  [Log] Window is handled. 
+2022-11-01 17:43:37,773 INFO  [Log] Product detail page is directed. 
+2022-11-01 17:43:59,916 INFO  [Log] Scrolled down to click AddToCart Button 
+2022-11-01 17:44:10,048 INFO  [Log] AddToCart Button is clicked 
+2022-11-01 17:44:10,663 INFO  [Log] Pop-up is closed 
+2022-11-01 17:44:10,842 INFO  [Log] Other stores options are displayed. 
+2022-11-01 17:44:22,740 INFO  [Log] Other store's AddToCart Button is clicked. 
+2022-11-01 17:44:22,978 INFO  [Log] Pop-up is closed 
+2022-11-01 17:44:27,732 INFO  [Log] Cart Page is directed. 
+2022-11-01 17:44:28,615 INFO  [Log] In cart page, added products are same. 
+2022-11-01 17:44:28,622 INFO  [Log] Product firm in ProductDetailPage is confirmed in CartPage 
+2022-11-01 17:44:28,622 INFO  [Log] Product name in ProductDetailPage is confirmed in CartPage 
+2022-11-01 17:44:28,647 INFO  [Log] ---TestNG Test tearing down all tabs--- 

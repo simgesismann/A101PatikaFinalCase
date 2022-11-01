@@ -2,9 +2,10 @@
 <suite name = "Single Thread All Test Cases">
 <test name = "Tests" parallel = "none">
     <parameter name="browser" value="chrome" />
-    <classes>
-        <class name = "TestNG.AddProductsFromDifferentStoresWithoutLogin" />
-        <class name = "TestNG.AddProductsFromDifferentStoresWithLogin" />
-    </classes>
+    <packages>
+        <package name="TestNG"></package>
+    </packages>
+
+
 </test>
 </suite>

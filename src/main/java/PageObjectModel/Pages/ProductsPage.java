@@ -28,12 +28,8 @@ public class ProductsPage extends ProductPagesConstants {
      * @throws InterruptedException
      */
     public void chooseOneProduct() throws InterruptedException {
-        log = new Log();
-        List<WebElement> productsList = findAll(ProductsLocator);
-        WebElement firstProduct = productsList.get(0);
-        firstProduct.click();
+        click(ProductsLocator);
         wait(5);
         log.info("One of products is chosen.");
-
     }
 }
