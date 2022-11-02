@@ -2,6 +2,8 @@ package TestNG;
 import Log.Log;
 import PageObjectModel.Pages.*;
 import org.junit.jupiter.api.Assertions;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 /**
  * This class tests addition products from different stores.
@@ -18,18 +20,22 @@ public class AddProductsFromDifferentStoresWithoutLogin extends BaseTest{
     String productFirmNameInCartPage;
     String productNameInDetailPage;
     String productNameInCartPage;
-    @Test
-    public void addProductsFromDifferentStoresWithoutLogin() throws InterruptedException {
+    String productName ;
+    @BeforeMethod
+    public void before(){
         homePage = new HomePage(driver);
-        productsPage = new ProductsPage(driver);
         productDetailPage = new ProductDetailPage(driver);
         cartPage = new CartPage(driver);
         log = new Log();
+        productName = "şemsiye";
+    }
+    @Test
+    public void addProductsFromDifferentStoresWithoutLogin() throws InterruptedException {
         homePage.acceptCookies();
-        homePage.searchBarPage().typeProductNameInSearchBarText("şemsiye");
-        homePage.searchBarPage().clickSearchButton();
+        homePage.searchBarPage().typeProductNameInSearchBarText(productName);
+        productsPage = homePage.searchBarPage().clickSearchButton();
         productsPage.assertProductPageIsDirected();
-        productsPage.chooseOneProduct();
+        productDetailPage = productsPage.chooseOneProduct();
         productDetailPage.windowHandle();
         productDetailPage.assertProductDetailPageIsDirected();
         productDetailPage.rollAndClickAddToCartButton();
@@ -40,7 +46,7 @@ public class AddProductsFromDifferentStoresWithoutLogin extends BaseTest{
         productFirmNameInDetailPage = productDetailPage.getTextTitleOfOtherOptionsList().toUpperCase().replaceAll("\\p{M}", "");
         productDetailPage.clickOtherOptionAddToCartButton();
         productDetailPage.clickCloseButton();
-        homePage.clickToMyCartButton();
+        cartPage = homePage.clickToMyCartButton();
         cartPage.assertCartPageIsDirected();
         productNameInCartPage = cartPage.getTextOfProductNameInCartPage();
         productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().toUpperCase().replaceAll("\\p{M}", "");

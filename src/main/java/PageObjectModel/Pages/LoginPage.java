@@ -9,13 +9,12 @@ public class LoginPage extends LoginPageConstants {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-    Log log;
+    Log log= new Log();
 
     /**
      * @method "typeEmail" is to send mail text to mail input.
      */
     public void typeEmail(){
-        log = new Log();
         type(EmailInputTextLocator,"simgetestt@gmail.com");
         log.info("Mail is typed");
     }
@@ -35,7 +34,6 @@ public class LoginPage extends LoginPageConstants {
      * @method "clickLoginButtonAfterPassword" is to click login button after password is typed.
      */
     public void clickLoginButtonAfterPassword(){
-        log = new Log();
         click(LoginButtonAfterPasswordLocator);
         log.info("Password is typed and login button is clicked.");
     }

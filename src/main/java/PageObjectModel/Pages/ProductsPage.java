@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class ProductsPage extends ProductPagesConstants {
-    Log log;
+    Log log=new Log();
     public ProductsPage(WebDriver driver) {
         super(driver);
     }
@@ -18,7 +18,6 @@ public class ProductsPage extends ProductPagesConstants {
      * @method "assertProductPageIsDirected" is confirm that page is directed by finding element.
      */
     public void assertProductPageIsDirected(){
-        log = new Log();
         Assertions.assertTrue(isDisplayed(WeFoundNumbersOfProductLabelLocator),"Products page is not directed");
         log.info("Product page is directed.");
     }
@@ -27,9 +26,10 @@ public class ProductsPage extends ProductPagesConstants {
      * @method "chooseOneProduct" is a method to choose a product from list of search
      * @throws InterruptedException
      */
-    public void chooseOneProduct() throws InterruptedException {
+    public ProductDetailPage chooseOneProduct() throws InterruptedException {
         click(ProductsLocator);
         wait(5);
         log.info("One of products is chosen.");
+        return new ProductDetailPage(driver);
     }
 }

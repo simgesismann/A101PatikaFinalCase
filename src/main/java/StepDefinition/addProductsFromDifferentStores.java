@@ -56,13 +56,13 @@ public class addProductsFromDifferentStores {
     @And("search product")
     public void search_product() {
         homePage = new HomePage(driver);
-        homePage.searchBarPage().clickSearchButton();
+        productsPage = homePage.searchBarPage().clickSearchButton();
     }
     @And("choose a product")
     public void choose_a_product() throws InterruptedException {
         productsPage = new ProductsPage(driver);
         productsPage.assertProductPageIsDirected();
-        productsPage.chooseOneProduct();
+        productDetailPage = productsPage.chooseOneProduct();
     }
     @And("add product to cart")
     public void add_product_to_cart() throws InterruptedException {
@@ -88,7 +88,7 @@ public class addProductsFromDifferentStores {
         homePage = new HomePage(driver);
         log = new Log();
         cartPage = new CartPage(driver);
-        homePage.clickToMyCartButton();
+        cartPage = homePage.clickToMyCartButton();
         cartPage.assertCartPageIsDirected();
     }
     @And("confirm product chosen from another store is on cart page")

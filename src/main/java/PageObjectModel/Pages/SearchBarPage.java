@@ -5,7 +5,7 @@ import Utilities.PageConstants.SearchBarConstants;
 import org.openqa.selenium.WebDriver;
 
 public class SearchBarPage extends SearchBarConstants {
-    Log log;
+    Log log=new Log();
 
     public SearchBarPage(WebDriver driver) {
         super(driver);
@@ -17,7 +17,6 @@ public class SearchBarPage extends SearchBarConstants {
      */
 
     public void typeProductNameInSearchBarText(String Text){
-        log = new Log();
         click(SearchBarTextLocator);
         type(SearchBarTextLocator,Text);
         log.info("Product name is typed in search bar.");
@@ -26,9 +25,9 @@ public class SearchBarPage extends SearchBarConstants {
     /**
      * @method "clickSearchButton" is to click search button.
      */
-    public void clickSearchButton(){
-        log = new Log();
+    public ProductsPage clickSearchButton(){
         click(SearchButtonLocator);
         log.info("Product name is searched.");
+        return new ProductsPage(driver);
     }
 }

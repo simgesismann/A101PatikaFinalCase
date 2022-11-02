@@ -2,6 +2,8 @@ package TestNG;
 import Log.Log;
 import PageObjectModel.Pages.*;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class AddProductsFromDifferentStoresWithLogin extends BaseTest{
@@ -15,14 +17,18 @@ public class AddProductsFromDifferentStoresWithLogin extends BaseTest{
     String productFirmNameInCartPage;
     String productNameInDetailPage;
     String productNameInCartPage;
-    @Test
-    public void addProductsFromDifferentStoresWithLogin() throws InterruptedException {
+    String productName;
+    @BeforeMethod
+    public void before(){
         homePage = new HomePage(driver);
-        productsPage = new ProductsPage(driver);
         productDetailPage = new ProductDetailPage(driver);
         cartPage = new CartPage(driver);
         loginPage = new LoginPage(driver);
         log = new Log();
+        productName = "şemsiye";
+    }
+    @Test
+    public void addProductsFromDifferentStoresWithLogin() throws InterruptedException {
         homePage.acceptCookies();
         homePage.moveAndClickLoginUserButton();
         loginPage.typeEmail();
@@ -30,10 +36,10 @@ public class AddProductsFromDifferentStoresWithLogin extends BaseTest{
         loginPage.typePassword();
         loginPage.clickLoginButtonAfterPassword();
         homePage.assertUserLoggedIn();
-        homePage.searchBarPage().typeProductNameInSearchBarText("şemsiye");
-        homePage.searchBarPage().clickSearchButton();
+        homePage.searchBarPage().typeProductNameInSearchBarText(productName);
+        productsPage = homePage.searchBarPage().clickSearchButton();
         productsPage.assertProductPageIsDirected();
-        productsPage.chooseOneProduct();
+        productDetailPage = productsPage.chooseOneProduct();
         productDetailPage.windowHandle();
         productDetailPage.assertProductDetailPageIsDirected();
         productDetailPage.rollAndClickAddToCartButton();
@@ -44,7 +50,7 @@ public class AddProductsFromDifferentStoresWithLogin extends BaseTest{
         productFirmNameInDetailPage = productDetailPage.getTextTitleOfOtherOptionsList().toUpperCase().replaceAll("\\p{M}", "");
         productDetailPage.clickOtherOptionAddToCartButton();
         productDetailPage.clickCloseButton();
-        homePage.clickToMyCartButton();
+        cartPage = homePage.clickToMyCartButton();
         cartPage.assertCartPageIsDirected();
         productNameInCartPage = cartPage.getTextOfProductNameInCartPage();
         productFirmNameInCartPage = cartPage.getTextOfOtherFirmTitleInCartPage().toUpperCase().replaceAll("\\p{M}", "");

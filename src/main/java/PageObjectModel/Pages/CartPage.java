@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class CartPage extends CartPageConstants {
-    Log log;
+    Log log=new Log();
     public CartPage(WebDriver driver) {
         super(driver);
     }
@@ -17,7 +17,6 @@ public class CartPage extends CartPageConstants {
      * @method "assertCartPageIsDirected" is to confirm CartPage is directed.
      */
     public void assertCartPageIsDirected(){
-        log = new Log();
         Assertions.assertTrue(isDisplayed(CartHeaderTitleLocator),"Cart page is not directed");
         log.info("Cart Page is directed.");
     }
@@ -31,7 +30,6 @@ public class CartPage extends CartPageConstants {
      * @method "assertAddedProductsAreSame" is to confirm that first two products in cart page has same names.
      */
     public void assertAddedProductsAreSame(){
-        log = new Log();
         List<WebElement> nameList = findAll(ProductNameInCartPageLocator);
         String firstProductName = nameList.get(0).getText();
         String secondProductName = nameList.get(1).getText();

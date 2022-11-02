@@ -41,8 +41,4 @@ git clone https://github.com/simgesismann/A101PatikaFinalCase.git
 
 ### Test Results in TestNG
 
-![](../../../../Desktop/Ekran Resmi 2022-10-27 12.38.04.png)
-
 ### Test Results in BDD
-
-![](../../../../Desktop/Ekran Resmi 2022-10-27 15.53.04.png)

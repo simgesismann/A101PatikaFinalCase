@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class HomePage extends HomePageConstants {
     SearchBarPage searchBarPage;
-    Log log;
+    Log log= new Log();
     public HomePage(WebDriver driver) {
         super(driver);
         searchBarPage = new SearchBarPage(driver);
@@ -20,7 +20,6 @@ public class HomePage extends HomePageConstants {
      * @method "acceptCookies" is to click accept button for cookie.
      */
     public void acceptCookies(){
-        log = new Log();
         Boolean display = true;
         while (display){
             if (isDisplayed(AcceptCookiesLocator)){
@@ -32,7 +31,6 @@ public class HomePage extends HomePageConstants {
         }
     }
     public void moveAndClickLoginUserButton(){
-        log = new Log();
         moveToElement(LogInGenelButtonLocator);
         WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(60));
         w.until(ExpectedConditions.elementToBeClickable(LogInButtonLocator));
@@ -48,16 +46,16 @@ public class HomePage extends HomePageConstants {
     /**
      * @method "clickToMyCartButton" is to scroll to top of page and click MyCart Button.
      */
-    public void clickToMyCartButton(){
+    public CartPage clickToMyCartButton(){
         scrollToTopOfPage();
         click(MyCartButtonLocator);
+        return new CartPage(driver);
     }
     /**
      * @method "assertUserLoggedIn" is to confirm that user is logged in by getting
      * text inside of my account name. If that string is not empty than user is logged in.
      */
     public void assertUserLoggedIn(){
-        log = new Log();
         String myAccount = getText(MyAccountButtonTitleLocator);
         Assertions.assertFalse((myAccount==""));
         log.info("User is logged in.");
