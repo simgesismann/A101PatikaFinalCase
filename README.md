@@ -40,7 +40,7 @@ git clone https://github.com/simgesismann/A101PatikaFinalCase.git
 ```
 
 ### Test Results in TestNG
-![image](SUITERESULT.png)
+![image](Results/SUITERESULT.png)
 
 ### Test Results in BDD
-![image](BDDRESULT.png)
+![image](Results/BDDRESULT.png)
